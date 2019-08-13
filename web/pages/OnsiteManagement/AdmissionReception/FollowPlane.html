@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>维修后台管理系统</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/ico">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/perfect-scrollbar.min.js"></script>
+    <script src="/js/main.min.js"></script>
+</head>
+
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <aside class="lyear-layout-sidebar">
+
+            <!-- logo -->
+            <div id="logo" class="sidebar-header">
+                <a href="/index.html">
+                    <img src="/images/logo-my.jpg" title="维修管控系统" alt="维修管控系统">
+                </a>
+            </div>
+            <div class="lyear-layout-sidebar-scroll">
+
+                <nav class="sidebar-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item nav-item-has-subnav active open">
+                            <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 现场管理</a>
+                            <ul class="nav nav-subnav">
+                                <li class="nav-item nav-item-has-subnav active open">
+                                    <a href="#"><i class="mdi mdi-circle-outline"></i>入厂接收管理</a>
+                                    <ul class="nav nav-subnav">
+                                        <li class="active"><a href="/pages/OnsiteManagement/AdmissionReception/FollowPlane.html">随机物品管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/AdmissionReception/BasicState.html">基本状态管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/AdmissionReception/SpecialSituation.html">特情管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/AdmissionReception/AdmissionHandover.html">交接管理</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="#"><i class="mdi mdi-circle-outline"></i>故检分解管理</a>
+                                    <ul class="nav nav-subnav">
+                                        <li><a href="/pages/OnsiteManagement/FaultDetectionAndDecomposition/StateDetection.html">状态检测管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/FaultDetectionAndDecomposition/DecompositionAndPaintStripping.html">分解退漆管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/FaultDetectionAndDecomposition/SetHandover.html">成套交接管理</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="#"><i class="mdi mdi-circle-outline"></i>维修更换管理</a>
+                                    <ul class="nav nav-subnav">
+                                        <li><a href="/pages/OnsiteManagement/MaintenanceAndReplacement/MaintenanceAndReplacement.html">维修资源管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/MaintenanceAndReplacement/RoutineMaintenance.html">常规维修管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/MaintenanceAndReplacement/MaintenanceHandover.html">交接管理</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="#"><i class="mdi mdi-circle-outline"></i>总装调试管理</a>
+                                    <ul class="nav nav-subnav">
+                                        <li><a href="/pages/OnsiteManagement/GeneralAssemblyDebuggingManagement/GeneralAssembly.html">总装管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/GeneralAssemblyDebuggingManagement/DebuggingReport.html">调试报告</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="#"><i class="mdi mdi-circle-outline"></i>试飞交付管理</a>
+                                    <ul class="nav nav-subnav">
+                                        <li><a href="/pages/OnsiteManagement/FlightTestDelivery/Acceptance.html">验收管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/FlightTestDelivery/FlightTestRecord.html">试飞记录</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="sidebar-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 综合管理</a>
+                            <ul class="nav nav-subnav">
+                                <li><a href="/pages/IntegratedManagement/SinglePlanInformation.html"><i class="mdi mdi-circle-outline"></i>单机信息管理</a></li>
+                                <li><a href="/pages/IntegratedManagement/Personnel.html"><i class="mdi mdi-circle-outline"></i>人员管理</a></li>
+                                <li><a href="/pages/IntegratedManagement/Device.html"><i class="mdi mdi-circle-outline"></i>设备管理</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="sidebar-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 质量管理</a>
+                            <ul class="nav nav-subnav">
+                                <li><a href="/pages/QualityManagement/FaultStatistics.html"><i class="mdi mdi-circle-outline"></i>故障统计</a></li>
+                                <li><a href="/pages/QualityManagement/FaultNotification.html"><i class="mdi mdi-circle-outline"></i>故障通报</a></li>
+                                <li><a href="/pages/QualityManagement/StatisticalStatement.html"><i class="mdi mdi-circle-outline"></i>统计报表</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="sidebar-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 系统管理</a>
+                            <ul class="nav nav-subnav">
+                                <li><a href="/pages/SystemManagement/Departmental.html"><i class="mdi mdi-circle-outline"></i>部门管理</a></li>
+                                <li><a href="/pages/SystemManagement/Role.html"><i class="mdi mdi-circle-outline"></i>角色管理</a></li>
+                                <li><a href="/pages/SystemManagement/Authority.html"><i class="mdi mdi-circle-outline"></i>权限管理</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <p class="copyright">
+                        Copyright &copy; 2019.
+
+                        <a href="#">浙江大学</a>
+                        All rights reserved.</p>
+                </div>
+            </div>
+
+        </aside>
+        <!--End 左侧导航-->
+
+        <!--头部信息-->
+        <header class="lyear-layout-header">
+
+            <nav class="navbar navbar-default">
+                <div class="topbar">
+
+                    <div class="topbar-left">
+                        <div class="lyear-aside-toggler">
+                            <span class="lyear-toggler-bar"></span>
+                            <span class="lyear-toggler-bar"></span>
+                            <span class="lyear-toggler-bar"></span>
+                        </div>
+                        <span class="navbar-page-title"> </span>
+                    </div>
+
+                    <ul class="topbar-right">
+                        <li class="dropdown dropdown-profile">
+                            <a href="javascript:void(0)" data-toggle="dropdown">
+                                <span >欢迎 &nbsp;&nbsp;</span>
+                                <span >
+                                    <font color="black">Admin</font>
+                                    <span>&nbsp;</span>
+                                    <span class="caret"></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="#"><i class="mdi mdi-account"></i> 个人信息</a></li>
+                                <li><a href="#"><i class="mdi mdi-lock-outline"></i> 修改密码</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="mdi mdi-logout-variant"></i> 退出登录</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+        </header>
+        <!--End 头部信息-->
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"><h4>入厂接收管理</h4></div>
+                            <div class="card-body">
+
+                                <ul class="nav nav-tabs nav-justified">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#home-basic">多余物检查</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a data-toggle="tab" href="#profile-basic">完备性及一致性检查</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a data-toggle="tab" href="#settings-basic">文档交接</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+<!-- 多余物检查-->
+                                    <div class="tab-pane fade active in" id="home-basic">
+                                        <div class="row">
+                                            <div class="card">
+                                                <div class="card-header">
+
+                                                    <div class="col-md-3 text-right">
+                                                        <label>飞机编号</label>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input class="form-control" type="text"/>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <th>项目名称</th>
+                                                        <th>完成情况</th>
+                                                        <th>入库地点及编号</th>
+                                                        <th>注意事项</th>
+                                                        <th>备注</th>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>枪炮退弹</td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="lyear-radio radio-inline radio-danger m-t-10">
+                                                                    <input type="radio" checked name="ifSuccess11">
+                                                                    <span>未完成</span>
+                                                                </label>
+                                                                <label class="lyear-radio radio-inline radio-success m-t-10">
+                                                                    <input type="radio" name="ifSuccess11">
+                                                                    <span>已完成</span>
+                                                                </label>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <input disabled class="form-control" type="text">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li>先要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a> </li>
+                                                                <li>再要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <input class="form-control" type="text" />
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>航空救生用品</td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="lyear-radio radio-inline radio-danger m-t-10">
+                                                                    <input type="radio" checked name="ifSuccess12">
+                                                                    <span>未完成</span>
+                                                                </label>
+                                                                <label class="lyear-radio radio-inline radio-success m-t-10">
+                                                                    <input type="radio" name="ifSuccess12">
+                                                                    <span>已完成</span>
+                                                                </label>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <input class="form-control" type="text">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li>先要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a> </li>
+                                                                <li>再要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <input class="form-control" type="text">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>弹药</td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="lyear-radio radio-inline radio-danger m-t-10">
+                                                                    <input type="radio" checked name="ifSuccess13">
+                                                                    <span>未完成</span>
+                                                                </label>
+                                                                <label class="lyear-radio radio-inline radio-success m-t-10">
+                                                                    <input type="radio" name="ifSuccess13">
+                                                                    <span>已完成</span>
+                                                                </label>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <input class="form-control" type="text">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li>先要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a> </li>
+                                                                <li>再要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <input class="form-control" type="text">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>放射性物品</td>
+                                                        <td>
+                                                            <div>
+                                                                <label class="lyear-radio radio-inline radio-danger m-t-10">
+                                                                    <input type="radio" checked name="ifSuccess14">
+                                                                    <span>未完成</span>
+                                                                </label>
+                                                                <label class="lyear-radio radio-inline radio-success m-t-10">
+                                                                    <input type="radio" name="ifSuccess14">
+                                                                    <span>已完成</span>
+                                                                </label>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <input class="form-control" type="text">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <ul>
+                                                                <li>先要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a> </li>
+                                                                <li>再要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <input class="form-control" type="text">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary">提交</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+<!-- 一致性检查-->
+                                    <div class="tab-pane fade" id="profile-basic">
+                                        <div class="row">
+                                            <div class="card">
+                                                <div class="card-header">
+
+                                                    <div class="col-md-3 text-right">
+                                                        <label>飞机编号</label>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input class="form-control" type="text"/>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th>项目名称</th>
+                                                            <th>完成情况</th>
+                                                            <th>相关信息填写</th>
+                                                            <th>注意事项</th>
+                                                            <th>备注</th>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>基本情况</td>
+                                                            <td>
+                                                                <div>
+                                                                    <label class="lyear-radio radio-inline radio-danger m-t-10">
+                                                                        <input type="radio" checked name="ifSuccess21">
+                                                                        <span>未完成</span>
+                                                                    </label>
+                                                                    <label class="lyear-radio radio-inline radio-success m-t-10">
+                                                                        <input type="radio" name="ifSuccess21">
+                                                                        <span>已完成</span>
+                                                                    </label>
+
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gridSystemModal">
+                                                                    基本情况填写
+                                                                </button>
+                                                                <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="gridSystemModal">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                <h4 class="modal-title" id="gridSystemModalLabel">基本情况</h4>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <div class="row">
+                                                                                <table class="table table-bordered">
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <label>送修单位
+                                                                                                <input class="form-control" type="text" />
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label>送修时间
+                                                                                                <input class="form-control" type="text" />
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label>缺件情况
+                                                                                                <input class="form-control" type="text" />
+                                                                                            </label>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <label>串件情况
+                                                                                                <input class="form-control" type="text" />
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label>外部损伤情况
+                                                                                                <input class="form-control" type="text" />
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label>大修次数
+                                                                                                <input class="form-control" type="text" />
+                                                                                            </label>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <label>日历时间
+                                                                                                <input class="form-control" type="text" />
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label>飞行时间
+                                                                                                <input class="form-control" type="text" />
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label>总起落次数
+                                                                                                <input class="form-control" type="text" />
+                                                                                            </label>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                    <table class="table table-bordered">
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <b>主要故障</b>
+                                                                                                    <input class="form-control" type="text" />
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <b>主要事故</b>
+                                                                                                    <input class="form-control" type="text" />
+
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                                                <button type="button" class="btn btn-primary">点击保存</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>先要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a> </li>
+                                                                    <li>再要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a></li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <input class="form-control" type="text" />
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>一致性及完备性</td>
+                                                            <td>
+                                                                <div>
+                                                                    <label class="lyear-radio radio-inline radio-danger m-t-10">
+                                                                        <input type="radio" checked name="ifSuccess22">
+                                                                        <span>未完成</span>
+                                                                    </label>
+                                                                    <label class="lyear-radio radio-inline radio-success m-t-10">
+                                                                        <input type="radio" name="ifSuccess22">
+                                                                        <span>已完成</span>
+                                                                    </label>
+
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gridSystemModal22">
+                                                                    一致性及完备性填写
+                                                                </button>
+                                                                <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="gridSystemModal22">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                <h4 class="modal-title" id="gridSystemModalLabel22">一致性及完备性</h4>
+                                                                            </div>
+                                                                            <div class="modal-body">
+
+                                                                                <table class="table table-bordered">
+                                                                                    <tr>
+                                                                                        <td>项目</td>
+                                                                                        <td>是否随机</td>
+                                                                                        <td>设备与文件编号一致性</td>
+                                                                                        <td>备注</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            飞机履历本
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label class="lyear-radio radio-danger m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2211">
+                                                                                                <span>无</span>
+                                                                                            </label>
+                                                                                            <label class="lyear-radio radio-success m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2211">
+                                                                                                <span>有</span>
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label class="lyear-radio radio-danger m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2212">
+                                                                                                <span>不一致</span>
+                                                                                            </label>
+                                                                                            <label class="lyear-radio radio-success m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2212">
+                                                                                                <span>一致</span>
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="form-control" /></td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            飞机设备履历本
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label class="lyear-radio radio-danger m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2213">
+                                                                                                <span>无</span>
+                                                                                            </label>
+                                                                                            <label class="lyear-radio radio-success m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2213">
+                                                                                                <span>有</span>
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label class="lyear-radio radio-danger m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2214">
+                                                                                                <span>不一致</span>
+                                                                                            </label>
+                                                                                            <label class="lyear-radio radio-success m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2214">
+                                                                                                <span>一致</span>
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="form-control" /></td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            飞机附件履历本
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label class="lyear-radio radio-danger m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2215">
+                                                                                                <span>无</span>
+                                                                                            </label>
+                                                                                            <label class="lyear-radio radio-success m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2215">
+                                                                                                <span>有</span>
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label class="lyear-radio radio-danger m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2216">
+                                                                                                <span>不一致</span>
+                                                                                            </label>
+                                                                                            <label class="lyear-radio radio-success m-t-10">
+                                                                                                <input type="radio" name="ifSuccess2216">
+                                                                                                <span>一致</span>
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td><input type="text" class="form-control" /></td>
+                                                                                    </tr>
+
+                                                                                </table>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                                                <button type="button" class="btn btn-primary">点击保存</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>先要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a> </li>
+                                                                    <li>再要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a></li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <input class="form-control" type="text">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>各系统性能检查</td>
+                                                            <td>
+                                                                <div>
+                                                                    <label class="lyear-radio radio-inline radio-danger m-t-10">
+                                                                        <input type="radio" checked name="ifSuccess23">
+                                                                        <span>未完成</span>
+                                                                    </label>
+                                                                    <label class="lyear-radio radio-inline radio-success m-t-10">
+                                                                        <input type="radio" name="ifSuccess23">
+                                                                        <span>已完成</span>
+                                                                    </label>
+
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gridSystemModal23">
+                                                                    各系统性能检查
+                                                                </button>
+                                                                <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="gridSystemModal23">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                <h4 class="modal-title" id="gridSystemModalLabel23">各系统性能检查</h4>
+                                                                            </div>
+                                                                            <div class="modal-body">
+
+                                                                                <table class="table table-bordered">
+                                                                                    <tr>
+                                                                                        <td>项目</td>
+                                                                                        <td>是否完好</td>
+                                                                                        <td>异常说明</td>
+                                                                                        <td>备注</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            发动机
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label class="lyear-radio radio-danger m-t-10">
+                                                                                                <input type="radio" name="ifSuccess22111">
+                                                                                                <span>否</span>
+                                                                                            </label>
+                                                                                            <label class="lyear-radio radio-success m-t-10">
+                                                                                                <input type="radio" name="ifSuccess22111">
+                                                                                                <span>是</span>
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <textarea class="form-control alert-danger"></textarea>
+                                                                                        </td>
+                                                                                        <td><textarea class="form-control"></textarea></td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            航电系统
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label class="lyear-radio radio-danger m-t-10">
+                                                                                                <input type="radio" name="ifSuccess22112">
+                                                                                                <span>否</span>
+                                                                                            </label>
+                                                                                            <label class="lyear-radio radio-success m-t-10">
+                                                                                                <input type="radio" name="ifSuccess22112">
+                                                                                                <span>是</span>
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <textarea class="form-control alert-danger"></textarea>
+                                                                                        </td>
+                                                                                        <td><textarea class="form-control"></textarea></td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            防火系统
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label class="lyear-radio radio-danger m-t-10">
+                                                                                                <input type="radio" name="ifSuccess22113">
+                                                                                                <span>否</span>
+                                                                                            </label>
+                                                                                            <label class="lyear-radio radio-success m-t-10">
+                                                                                                <input type="radio" name="ifSuccess22113">
+                                                                                                <span>是</span>
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <textarea class="form-control alert-danger"></textarea>
+                                                                                        </td>
+                                                                                        <td><textarea class="form-control"></textarea></td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            飞控系统
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label class="lyear-radio radio-danger m-t-10">
+                                                                                                <input type="radio" name="ifSuccess22114">
+                                                                                                <span>否</span>
+                                                                                            </label>
+                                                                                            <label class="lyear-radio radio-success m-t-10">
+                                                                                                <input type="radio" name="ifSuccess22114">
+                                                                                                <span>是</span>
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <textarea class="form-control alert-danger"></textarea>
+                                                                                        </td>
+                                                                                        <td><textarea class="form-control"></textarea></td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            电气系统
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <label class="lyear-radio radio-danger m-t-10">
+                                                                                                <input type="radio" name="ifSuccess22115">
+                                                                                                <span>否</span>
+                                                                                            </label>
+                                                                                            <label class="lyear-radio radio-success m-t-10">
+                                                                                                <input type="radio" name="ifSuccess22115">
+                                                                                                <span>是</span>
+                                                                                            </label>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <textarea class="form-control alert-danger"></textarea>
+                                                                                        </td>
+                                                                                        <td><textarea class="form-control"></textarea></td>
+                                                                                    </tr>
+
+                                                                                </table>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                                                <button type="button" class="btn btn-primary">点击保存</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>先要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a> </li>
+                                                                    <li>再要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a></li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <input class="form-control" type="text">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>特情管理</td>
+                                                            <td>
+                                                                <div>
+                                                                    <label class="lyear-radio radio-inline radio-danger m-t-10">
+                                                                        <input type="radio" checked name="ifSuccess24">
+                                                                        <span>未完成</span>
+                                                                    </label>
+                                                                    <label class="lyear-radio radio-inline radio-success m-t-10">
+                                                                        <input type="radio" name="ifSuccess24">
+                                                                        <span>已完成</span>
+                                                                    </label>
+
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gridSystemModal24">
+                                                                    特情填写
+                                                                </button>
+                                                                <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="gridSystemModal24">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                <h4 class="modal-title" id="gridSystemModalLabel24">一致性及完备性</h4>
+                                                                            </div>
+                                                                            <div class="modal-body">
+
+                                                                                <table class="table table-bordered">
+                                                                                    <tr>
+                                                                                        <td>项目</td>
+                                                                                        <td>特情说明</td>
+                                                                                        <td>备注</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <textarea class="form-control"></textarea>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                           <textarea class="form-control"></textarea>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                           <textarea class="form-control"></textarea>
+                                                                                        </td>
+                                                                                    </tr>
+
+
+                                                                                </table>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                                                <button type="button" class="btn btn-primary">点击保存</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>先要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a> </li>
+                                                                    <li>再要.... <a href="#" ><i class="mdi mdi-comment-text"></i>详情</a></li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <input class="form-control" type="text">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                    </table>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary">提交</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+<!-- 文档交接-->
+                                    <div class="tab-pane fade" id="settings-basic">
+                                        <div class="row">
+                                            <div class="card">
+                                                <div class="card-header">
+
+                                                    <div class="col-md-3 text-right">
+                                                        <label>飞机编号</label>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input class="form-control" type="text"/>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th>项目名称</th>
+                                                            <th>移交人</th>
+                                                            <th>接收地点</th>
+                                                            <th>接收人</th>
+                                                            <th>备注</th>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>履历本</td>
+                                                            <td>
+                                                                <div>
+                                                                   <input class="form-control" type="text" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <input class="form-control" type="text" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <input class="form-control" type="text" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <input class="form-control" type="text" />
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>记录文件</td>
+                                                            <td>
+                                                                <div>
+                                                                    <input class="form-control" type="text" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <input class="form-control" type="text" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <input class="form-control" type="text" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div>
+                                                                    <input class="form-control" type="text" />
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary">提交</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+</body>
+</html>

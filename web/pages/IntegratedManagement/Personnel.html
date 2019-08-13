@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>维修后台管理系统</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/ico">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/perfect-scrollbar.min.js"></script>
+    <script src="/js/main.min.js"></script>
+</head>
+
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+        <!--左侧导航-->
+        <aside class="lyear-layout-sidebar">
+
+            <!-- logo -->
+            <div id="logo" class="sidebar-header">
+                <a href="/index.html">
+                    <img src="/images/logo-my.jpg" title="维修管控系统" alt="维修管控系统">
+                </a>
+            </div>
+            <div class="lyear-layout-sidebar-scroll">
+
+                <nav class="sidebar-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 现场管理</a>
+                            <ul class="nav nav-subnav">
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="#"><i class="mdi mdi-circle-outline"></i>入厂接收管理</a>
+                                    <ul class="nav nav-subnav">
+                                        <li><a href="/pages/OnsiteManagement/AdmissionReception/FollowPlane.html">随机物品管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/AdmissionReception/BasicState.html">基本状态管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/AdmissionReception/SpecialSituation.html">特情管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/AdmissionReception/AdmissionHandover.html">交接管理</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="#"><i class="mdi mdi-circle-outline"></i>故检分解管理</a>
+                                    <ul class="nav nav-subnav">
+                                        <li><a href="/pages/OnsiteManagement/FaultDetectionAndDecomposition/StateDetection.html">状态检测管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/FaultDetectionAndDecomposition/DecompositionAndPaintStripping.html">分解退漆管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/FaultDetectionAndDecomposition/SetHandover.html">成套交接管理</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="#"><i class="mdi mdi-circle-outline"></i>维修更换管理</a>
+                                    <ul class="nav nav-subnav">
+                                        <li><a href="/pages/OnsiteManagement/MaintenanceAndReplacement/MaintenanceAndReplacement.html">维修资源管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/MaintenanceAndReplacement/RoutineMaintenance.html">常规维修管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/MaintenanceAndReplacement/MaintenanceHandover.html">交接管理</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="#"><i class="mdi mdi-circle-outline"></i>总装调试管理</a>
+                                    <ul class="nav nav-subnav">
+                                        <li><a href="/pages/OnsiteManagement/GeneralAssemblyDebuggingManagement/GeneralAssembly.html">总装管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/GeneralAssemblyDebuggingManagement/DebuggingReport.html">调试报告</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item nav-item-has-subnav">
+                                    <a href="#"><i class="mdi mdi-circle-outline"></i>试飞交付管理</a>
+                                    <ul class="nav nav-subnav">
+                                        <li><a href="/pages/OnsiteManagement/FlightTestDelivery/Acceptance.html">验收管理</a></li>
+                                        <li><a href="/pages/OnsiteManagement/FlightTestDelivery/FlightTestRecord.html">试飞记录</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="sidebar-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item nav-item-has-subnav active open">
+                            <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 综合管理</a>
+                            <ul class="nav nav-subnav">
+                                <li><a href="/pages/IntegratedManagement/SinglePlanInformation.html"><i class="mdi mdi-circle-outline"></i>单机信息管理</a></li>
+                                <li class="active"><a href="/pages/IntegratedManagement/Personnel.html"><i class="mdi mdi-circle-outline"></i>人员管理</a></li>
+                                <li><a href="/pages/IntegratedManagement/Device.html"><i class="mdi mdi-circle-outline"></i>设备管理</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="sidebar-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 质量管理</a>
+                            <ul class="nav nav-subnav">
+                                <li><a href="/pages/QualityManagement/FaultStatistics.html"><i class="mdi mdi-circle-outline"></i>故障统计</a></li>
+                                <li><a href="/pages/QualityManagement/FaultNotification.html"><i class="mdi mdi-circle-outline"></i>故障通报</a></li>
+                                <li><a href="/pages/QualityManagement/StatisticalStatement.html"><i class="mdi mdi-circle-outline"></i>统计报表</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="sidebar-main">
+                    <ul class="nav nav-drawer">
+                        <li class="nav-item nav-item-has-subnav">
+                            <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 系统管理</a>
+                            <ul class="nav nav-subnav">
+                                <li><a href="/pages/SystemManagement/Departmental.html"><i class="mdi mdi-circle-outline"></i>部门管理</a></li>
+                                <li><a href="/pages/SystemManagement/Role.html"><i class="mdi mdi-circle-outline"></i>角色管理</a></li>
+                                <li><a href="/pages/SystemManagement/Authority.html"><i class="mdi mdi-circle-outline"></i>权限管理</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <p class="copyright">
+                        Copyright &copy; 2019.
+
+                        <a href="#">浙江大学</a>
+                        All rights reserved.</p>
+                </div>
+            </div>
+
+        </aside>
+        <!--End 左侧导航-->
+
+        <!--头部信息-->
+        <header class="lyear-layout-header">
+
+            <nav class="navbar navbar-default">
+                <div class="topbar">
+
+                    <div class="topbar-left">
+                        <div class="lyear-aside-toggler">
+                            <span class="lyear-toggler-bar"></span>
+                            <span class="lyear-toggler-bar"></span>
+                            <span class="lyear-toggler-bar"></span>
+                        </div>
+                        <span class="navbar-page-title"> </span>
+                    </div>
+
+                    <ul class="topbar-right">
+                        <li class="dropdown dropdown-profile">
+                            <a href="javascript:void(0)" data-toggle="dropdown">
+                                <span >欢迎 &nbsp;&nbsp;</span>
+                                <span >
+                                    <font color="black">Admin</font>
+                                    <span>&nbsp;</span>
+                                    <span class="caret"></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="#"><i class="mdi mdi-account"></i> 个人信息</a></li>
+                                <li><a href="#"><i class="mdi mdi-lock-outline"></i> 修改密码</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="mdi mdi-logout-variant"></i> 退出登录</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+        </header>
+        <!--End 头部信息-->
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content">
+
+            <div class="container-fluid">
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header"><h4>人员管理</h4></div>
+                            <div class="card-toolbar clearfix">
+                                <form class="pull-right search-bar" method="get" action="#" role="form">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div class="input-group">
+                                                    <div class="input-group-btn">
+                                                        <input type="hidden" name="search_field" id="search-field"
+                                                               value="title">
+                                                        <button class="btn btn-default dropdown-toggle" id="search-btn"
+                                                                data-toggle="dropdown" type="button"
+                                                                aria-haspopup="true"
+                                                                aria-expanded="false">
+                                                            名称 <span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a tabindex="-1" href="javascript:void(0)"
+                                                                   data-field="title">名称</a>
+                                                            </li>
+                                                            <li><a tabindex="-1" href="javascript:void(0)"
+                                                                   data-field="cat_name">状态</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" value="" name="keyword" placeholder="Search">
+                                            </td>
+                                            <td>
+                                                <button type="submit" class="btn btn-primary">搜索</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                                <div class="toolbar-btn-action">
+                                    <a class="btn btn-primary m-r-5" href="#"><i class="mdi mdi-plus"></i> 新增</a>
+                                    <a class="btn btn-danger" href="#"><i class="mdi mdi-window-close"></i> 删除</a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>
+                                                <label class="lyear-checkbox checkbox-primary">
+                                                    <input type="checkbox" id="check-all"><span></span>
+                                                </label>
+                                            </th>
+                                            <th>ID</th>
+                                            <th>姓名</th>
+                                            <th>工号</th>
+                                            <th>部门</th>
+                                            <th>职务</th>
+                                            <th>电话</th>
+                                            <th>详细</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="lyear-checkbox checkbox-primary">
+                                                    <input type="checkbox" name="ids[]" value="1"><span></span>
+                                                </label>
+                                            </td>
+                                            <td>1</td>
+                                            <td>张三</td>
+                                            <td>111100</td>
+                                            <td>分解部</td>
+                                            <td>部长</td>
+                                            <td>18888888888</td>
+                                            <td>
+                                                <div class="btn-group">
+
+<!--                                                    <button type="button" class="btn btn-xs btn-default" data-toggle="modal" data-target="#gridSystemModal">-->
+<!--                                                        详细-->
+<!--                                                    </button>-->
+
+                                                    <a class="btn btn-xs btn-default" href="#" title="详细"
+                                                       data-toggle="modal" data-target="#gridSystemModal" ><i class="mdi mdi-contacts"></i></a>
+
+
+                                                    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="gridSystemModal">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                    <h4 class="modal-title" id="gridSystemModalLabel">人员信息详情</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >姓名</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">张三</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >性别</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">男</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >工号</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">123456</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >政治面貌</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">中共党员</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >民族</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">汉</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >出生日期</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">1980-01-01</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >所属部门</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">分解部</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >职务</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">部长</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >参与工作时间</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">2000-01-01</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >工龄</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">19</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >联系电话</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">18888888888</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+
+
+                                                                    <!--  姓名\性别\政治面貌\民族\出生日期\所属部门\职务\参与工作时间\工龄\联系电话\备注\工作履历\培训记录\技能掌握情况-->
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >工作履历</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">XXXX-XXXX</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >培训记录</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">XXXX-XXXX</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >技能掌握情况</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">XXXX-XXXX</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label class="col-xs-12"
+                                                                                >备注</label>
+                                                                                <div class="col-xs-12">
+                                                                                    <p class="form-control">无</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a class="btn btn-xs btn-default" href="#" title="编辑"
+                                                       data-toggle="tooltip"><i class="mdi mdi-pencil"></i></a>
+                                                    <a class="btn btn-xs btn-default" href="#" title="删除"
+                                                       data-toggle="tooltip"><i class="mdi mdi-window-close"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <ul class="pagination">
+                                    <li class="disabled"><span>«</span></li>
+                                    <li class="active"><span>1</span></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+</body>
+</html>

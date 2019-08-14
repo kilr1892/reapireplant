@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <title>维修后台管理系统</title>
     <link rel="icon" href="/images/favicon.ico" type="image/ico">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="/css/style.min.css" rel="stylesheet">
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/perfect-scrollbar.min.js"></script>
-    <script type="text/javascript" src="/js/main.min.js"></script>
-    <script src="/js/echarts.min.js"></script>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="./css/style.min.css" rel="stylesheet">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/perfect-scrollbar.min.js"></script>
+    <script src="./js/main.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
 </head>
 
 <body>
@@ -34,45 +34,10 @@
                         <li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 现场管理</a>
                             <ul class="nav nav-subnav">
-                                <li class="nav-item nav-item-has-subnav">
-                                    <a href="#"><i class="mdi mdi-circle-outline"></i>入厂接收管理</a>
-                                    <ul class="nav nav-subnav">
-                                        <li><a href="/pages/OnsiteManagement/AdmissionReception/FollowPlane.html">随机物品管理</a></li>
-                                        <li><a href="/pages/OnsiteManagement/AdmissionReception/BasicState.html">基本状态管理</a></li>
-                                        <li><a href="/pages/OnsiteManagement/AdmissionReception/SpecialSituation.html">特情管理</a></li>
-                                        <li><a href="/pages/OnsiteManagement/AdmissionReception/AdmissionHandover.html">交接管理</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item nav-item-has-subnav">
-                                    <a href="#"><i class="mdi mdi-circle-outline"></i>故检分解管理</a>
-                                    <ul class="nav nav-subnav">
-                                        <li><a href="/pages/OnsiteManagement/FaultDetectionAndDecomposition/StateDetection.html">状态检测管理</a></li>
-                                        <li><a href="/pages/OnsiteManagement/FaultDetectionAndDecomposition/DecompositionAndPaintStripping.html">分解退漆管理</a></li>
-                                        <li><a href="/pages/OnsiteManagement/FaultDetectionAndDecomposition/SetHandover.html">成套交接管理</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item nav-item-has-subnav">
-                                    <a href="#"><i class="mdi mdi-circle-outline"></i>维修更换管理</a>
-                                    <ul class="nav nav-subnav">
-                                        <li><a href="/pages/OnsiteManagement/MaintenanceAndReplacement/MaintenanceAndReplacement.html">维修资源管理</a></li>
-                                        <li><a href="/pages/OnsiteManagement/MaintenanceAndReplacement/RoutineMaintenance.html">常规维修管理</a></li>
-                                        <li><a href="/pages/OnsiteManagement/MaintenanceAndReplacement/MaintenanceHandover.html">交接管理</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item nav-item-has-subnav">
-                                    <a href="#"><i class="mdi mdi-circle-outline"></i>总装调试管理</a>
-                                    <ul class="nav nav-subnav">
-                                        <li><a href="/pages/OnsiteManagement/GeneralAssemblyDebuggingManagement/GeneralAssembly.html">总装管理</a></li>
-                                        <li><a href="/pages/OnsiteManagement/GeneralAssemblyDebuggingManagement/DebuggingReport.html">调试报告</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item nav-item-has-subnav">
-                                    <a href="#"><i class="mdi mdi-circle-outline"></i>试飞交付管理</a>
-                                    <ul class="nav nav-subnav">
-                                        <li><a href="/pages/OnsiteManagement/FlightTestDelivery/Acceptance.html">验收管理</a></li>
-                                        <li><a href="/pages/OnsiteManagement/FlightTestDelivery/FlightTestRecord.html">试飞记录</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="./pages/OnsiteManagement/FollowPlane.html"><i class="mdi mdi-circle-outline"></i>入厂接收管理</a></li>
+                                <li><a href="./pages/OnsiteManagement/StateDetection.html"><i class="mdi mdi-circle-outline"></i>故检分解管理</a></li>
+                                <li><a href="./pages/OnsiteManagement/MaintenanceAndReplacement.html"><i class="mdi mdi-circle-outline"></i>维修更换管理</a></li>
+                                <li><a href="./pages/OnsiteManagement/GeneralAssembly.html"><i class="mdi mdi-circle-outline"></i>总装调试管理</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -83,10 +48,9 @@
                         <li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 综合管理</a>
                             <ul class="nav nav-subnav">
-                                <li><a href="/pages/IntegratedManagement/SinglePlanInformation.html"><i class="mdi mdi-circle-outline"></i>单机信息管理</a></li>
-                                <li><a href="/pages/IntegratedManagement/ProgressSummary.html"><i class="mdi mdi-circle-outline"></i>进度汇总</a></li>
-                                <li><a href="/pages/IntegratedManagement/Personnel.html"><i class="mdi mdi-circle-outline"></i>人员管理</a></li>
-                                <li><a href="/pages/IntegratedManagement/Device.html"><i class="mdi mdi-circle-outline"></i>设备管理</a></li>
+                                <li><a href="./pages/IntegratedManagement/SinglePlanInformation.html"><i class="mdi mdi-circle-outline"></i>单机信息管理</a></li>
+                                <li><a href="./pages/IntegratedManagement/Personnel.html"><i class="mdi mdi-circle-outline"></i>人员管理</a></li>
+                                <li><a href="./pages/IntegratedManagement/Device.html"><i class="mdi mdi-circle-outline"></i>设备管理</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -97,9 +61,9 @@
                         <li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 质量管理</a>
                             <ul class="nav nav-subnav">
-                                <li><a href="/pages/QualityManagement/FaultStatistics.html"><i class="mdi mdi-circle-outline"></i>故障统计</a></li>
-                                <li><a href="/pages/QualityManagement/FaultNotification.html"><i class="mdi mdi-circle-outline"></i>故障通报</a></li>
-                                <li><a href="/pages/QualityManagement/StatisticalStatement.html"><i class="mdi mdi-circle-outline"></i>统计报表</a></li>
+                                <li><a href="./pages/QualityManagement/FaultStatistics.html"><i class="mdi mdi-circle-outline"></i>故障统计</a></li>
+                                <li><a href="./pages/QualityManagement/FaultNotification.html"><i class="mdi mdi-circle-outline"></i>故障通报</a></li>
+                                <li><a href="./pages/QualityManagement/StatisticalStatement.html"><i class="mdi mdi-circle-outline"></i>统计报表</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -110,9 +74,9 @@
                         <li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="mdi mdi-nut"></i> 系统管理</a>
                             <ul class="nav nav-subnav">
-                                <li><a href="/pages/SystemManagement/Departmental.html"><i class="mdi mdi-circle-outline"></i>部门管理</a></li>
-                                <li><a href="/pages/SystemManagement/Role.html"><i class="mdi mdi-circle-outline"></i>角色管理</a></li>
-                                <li><a href="/pages/SystemManagement/Authority.html"><i class="mdi mdi-circle-outline"></i>权限管理</a></li>
+                                <li><a href="./pages/SystemManagement/Departmental.html"><i class="mdi mdi-circle-outline"></i>部门管理</a></li>
+                                <li><a href="./pages/SystemManagement/Role.html"><i class="mdi mdi-circle-outline"></i>角色管理</a></li>
+                                <li><a href="./pages/SystemManagement/Authority.html"><i class="mdi mdi-circle-outline"></i>权限管理</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -123,6 +87,7 @@
                         Copyright &copy; 2019.
 
                         <a href="#">浙江大学</a>
+                        <br/>
                         All rights reserved.</p>
                 </div>
             </div>
